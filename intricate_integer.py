@@ -21,7 +21,7 @@ class IntricateInteger:
             raise ValueError("Can only multiply IntricateInteger instances")
         if self.modulus != other.modulus or self.alpha != other.alpha:
             raise ValueError("Incompatible IntricateIntegers: different modulus or alpha")
-        new_value = (self.value + other.value + self.alpha * lcm(self.value, other.value)) % self.modulus
+        new_value = (self.value + other.value + self.alpha * math.lcm(self.value, other.value)) % self.modulus
         return IntricateInteger(new_value, self.modulus, self.alpha)
 
 def has_intricate_peculiar_property(n, alpha):
