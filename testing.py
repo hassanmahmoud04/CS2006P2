@@ -5,9 +5,6 @@ from i_integers_vhardfeatures import generate_spanning_set
 from itertools import combinations
 
 
-#intricate integer testing
-
-
 
 def test_intricate_integer():
     x = IntricateInteger(3, 7, 2)
@@ -56,7 +53,30 @@ test_peculiar_property(peculiar_property_results)
 
 print("Pairs (n, alpha) where commutativity does not hold:", commutative_property_results)
 
+def test_peculiar_property(peculiarity_results):
+    for n, a in peculiarity_results:
+        if a != n-1:
+            print("Test failed: property does not hold for",(n, a))
+            return
+    print("Test passed! property holds if and only if α = n − 1")
+    
+peculiar_property_results = []
+commutative_property_results = []
 
+for n in range(1, 51):
+    peculiar_property_results += [(n, a) for a in range(0, n) if iterator_has_intricate_peculiar_property(n, a)]
+    commutative_property_results += [(n, a) for a in range(0, n) if iterator_has_commutative_intricate_multiplication(n, a)]
+
+test_peculiar_property(peculiar_property_results)
+
+print("Pairs (n, alpha) where commutativity does not hold:", commutative_property_results)
+
+# Testing new features
+print("Testing associative property and intricate roots of one...")
+for n in range(1, 6): # Example range, adjust as needed
+    for alpha in range(0, n):
+        print(f"n={n}, alpha={alpha}, associative: {has_associative_intricate_multiplication(n, alpha)}")
+        print(f"n={n}, alpha={alpha}, roots of one: {intricate_roots_of_one(n, alpha)}")
 
 w = IntricateInteger(3, 7, 2)
 x = IntricateInteger(5, 7, 2)

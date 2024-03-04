@@ -1,8 +1,5 @@
 import math
 
-# def lcm(x, y):
-#     return abs(x*y) // math.gcd(x, y) if x and y else 0
-
 class IntricateInteger:
     def __init__(self, value, modulus, alpha):
         if modulus <= 0:
