@@ -9,13 +9,12 @@ def iterator_has_intricate_peculiar_property(n,alpha):
             return False
     return True
 
-def iterator_has_associative_intricate_multiplication(n, alpha):
-    for x in range(n):
-        for y in range(n):
-            for z in range(n):
-                xy = IntricateInteger(x, n, alpha) * IntricateInteger(y, n, alpha)
-                yz = IntricateInteger(y, n, alpha) * IntricateInteger(z, n, alpha)
-                if (xy * IntricateInteger(z, n, alpha)).value != (IntricateInteger(x, n, alpha) * yz).value:
+##############################################
+def has_associative_intricate_multiplication(n, alpha):
+    for x in IntricateIntegers(n,alpha):
+        for y in x:
+            for z in y:
+                if not (((x * y) * z).value == (x * (y * z)).value):
                     return False
     return True
 

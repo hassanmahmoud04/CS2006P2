@@ -1,7 +1,10 @@
 import timeit
+from easy_medium_features import *
+from i_integerwith_medium_features import *
+from intricate_integer_hardfeatures import *
 from intricate_integer import IntricateInteger
 from intricate_integers import IntricateIntegers
-from i_integers_vhardfeatures import generate_spanning_set
+
 from itertools import combinations
 
 
