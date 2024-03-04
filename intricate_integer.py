@@ -1,7 +1,7 @@
 import math
 
-def lcm(x, y):
-    return abs(x*y) // math.gcd(x, y) if x and y else 0
+# def lcm(x, y):
+#     return abs(x*y) // math.gcd(x, y) if x and y else 0
 
 class IntricateInteger:
     def __init__(self, value, modulus, alpha):
@@ -24,51 +24,9 @@ class IntricateInteger:
         new_value = (self.value + other.value + self.alpha * math.lcm(self.value, other.value)) % self.modulus
         return IntricateInteger(new_value, self.modulus, self.alpha)
 
-def has_intricate_peculiar_property(n, alpha):
-    for x in range(n):
-        ix = IntricateInteger(x, n, alpha)
-        if (ix * ix).value != ix.value:
-            return False
-    return True
+    def __eq__(self, other):
+        # Check if 'other' is instance of MyClass and compare values
+        return isinstance(other, IntricateInteger) and self.value == other.value and self.modulus == other.modulus and self.alpha == other.alpha
+    def __hash__(self):
+        return hash(self.value)
 
-def has_commutative_intricate_multiplication(n, alpha):
-    for x in range(n):
-        for y in range(x + 1, n):  # Start from x+1 to avoid redundant checks
-            ix = IntricateInteger(x, n, alpha)
-            iy = IntricateInteger(y, n, alpha)
-            if (ix * iy).value != (iy * ix).value:
-                return False
-    return True
-
-def test_intricate_integer():
-    x = IntricateInteger(3, 7, 2)
-    y = IntricateInteger(5, 7, 2)
-    assert str(x) == "<3 mod 7 | 2>", f"Expected '<3 mod 7 | 2>', got '{str(x)}'"
-    assert str(y) == "<5 mod 7 | 2>", f"Expected '<5 mod 7 | 2>', got '{str(y)}'"
-    assert str(x * x) == "<5 mod 7 | 2>", f"Expected '<5 mod 7 | 2>', got '{str(x * x)}'"
-    assert str(x * y) == "<3 mod 7 | 2>", f"Expected '<3 mod 7 | 2>', got '{str(x * y)}'"
-    try:
-        z = IntricateInteger(1, 8, 3)  # Different modulus
-        result = x * z
-        assert False, "Expected ValueError for incompatible IntricateIntegers"
-    except ValueError:
-        pass  # Expected exception for incompatible operations
-
-    print("IntricateInteger basic tests passed!")
-
-# Check for all pairs (n, alpha) where 1 <= n <= 50 and 0 <= alpha < n
-peculiar_property_results = []
-commutativity_results = []
-for n in range(1, 51):
-    for alpha in range(n):
-        peculiar_property = has_intricate_peculiar_property(n, alpha)
-        commutativity = has_commutative_intricate_multiplication(n, alpha)
-        if peculiar_property:
-            peculiar_property_results.append((n, alpha))
-        if not commutativity:
-            commutativity_results.append((n, alpha))
-
-print("Pairs (n, alpha) where x ⊗ x = x holds:", peculiar_property_results)
-print("Pairs (n, alpha) where commutativity does not hold:", commutativity_results)
-
-test_intricate_integer()
