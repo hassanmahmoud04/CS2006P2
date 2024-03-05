@@ -112,7 +112,6 @@ def test_peculiar_property(results_tuple):
     assert a == n-1, f"{a} = {n-1}"
 
 
-
 """ Parametrized tests to make sure a = n-1 hold for all pairs (n, alpha) where 1 <= n <= 50 and 0 <= alpha < n """
 @pytest.mark.parametrize("results_tuple", ipeculiar_property_results)
 def test_iterative_peculiar_property(results_tuple):
@@ -120,10 +119,12 @@ def test_iterative_peculiar_property(results_tuple):
     assert a == n-1, f"{a} = {n-1}"
 
 """ tests to check whether commutativity holds for all pairs (n,a), where 1≤n≤50 and 0≤a<n """
-@pytest.fixture
-def commutative_results(request):  
-    return request.param 
+def test_commutative_property():
+    commutative_results = commutative_property_results
 
-@pytest.mark.parametrize("commutative_results", commutative_property_results, indirect=True)
-def test_commutative_property(commutative_results):
+    assert len(commutative_results) == 0, f"test passed"
+
+def test_iterative_commutative_property():
+    commutative_results = icommutative_property_results
+
     assert len(commutative_results) == 0
