@@ -1,5 +1,3 @@
-import math
-from intricate_integer import IntricateInteger
 from intricate_integers import IntricateIntegers
 
 def iterator_has_intricate_peculiar_property(n,alpha):
@@ -10,10 +8,12 @@ def iterator_has_intricate_peculiar_property(n,alpha):
     return True
 
 ##############################################
-def has_associative_intricate_multiplication(n, alpha):
-    for x in IntricateIntegers(n,alpha):
-        for y in IntricateIntegers(n,alpha):
-            for z in IntricateIntegers(n,alpha):
+def iterator_has_associative_intricate_multiplication(n, alpha):
+    intricate_integers = IntricateIntegers(n, alpha)
+
+    for x in intricate_integers:
+        for y in intricate_integers:
+            for z in intricate_integers:
                 if not (((x * y) * z).value == (x * (y * z)).value):
                     return False
     return True
@@ -22,7 +22,7 @@ def iterator_has_commutative_intricate_multiplication(n, alpha):
     intricate_integeres = IntricateIntegers(n, alpha)
 
     for i, elem in enumerate(intricate_integeres):
-        for j, elem2 in intricate_integeres:
+        for j, elem2 in enumerate(intricate_integeres):
             if not ((elem * elem2).value == (elem2 * elem).value):
                 return False
     return True
@@ -30,7 +30,7 @@ def iterator_has_commutative_intricate_multiplication(n, alpha):
 associativity_results = []
 for n in range(1, 21):
     for alpha in range(n):
-        if has_associative_intricate_multiplication(n, alpha):
+        if iterator_has_associative_intricate_multiplication(n, alpha):
             associativity_results.append((n, alpha))
 
 print("Pairs (n, alpha) where associativity holds:", associativity_results)

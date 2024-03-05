@@ -1,4 +1,5 @@
 import timeit
+import pytest
 from easy_medium_features import *
 from i_integerwith_medium_features import *
 from intricate_integer_hardfeatures import *
@@ -27,7 +28,7 @@ def test_intricate_integer():
 
 # Check for all pairs (n, alpha) where 1 <= n <= 50 and 0 <= alpha < n
 peculiar_property_results = []
-commutativity_results = []
+commutative_property_results = []
 for n in range(1, 51):
     for alpha in range(n):
         peculiar_property = has_intricate_peculiar_property(n, alpha)
@@ -35,24 +36,12 @@ for n in range(1, 51):
         if peculiar_property:
             peculiar_property_results.append((n, alpha))
         if not commutativity:
-            commutativity_results.append((n, alpha))
+            commutative_property_results.append((n, alpha))
 
 print("Pairs (n, alpha) where x ⊗ x = x holds:", peculiar_property_results)
-print("Pairs (n, alpha) where commutativity does not hold:", commutativity_results)
+print("Pairs (n, alpha) where commutativity does not hold:", commutative_property_results)
 
 test_intricate_integer()
-
-# intricate integers testing
-
-peculiar_property_results = []
-commutative_property_results = []
-
-for n in range(1, 51):
-    peculiar_property_results += [(n, a) for a in range(0, n) if iterator_has_intricate_peculiar_property(n, a)]
-    commutative_property_results += [(n, a) for a in range(0, n) if iterator_has_commutative_intricate_multiplication(n, a)]
-
-test_peculiar_property(peculiar_property_results)
-
 
 print("Pairs (n, alpha) where commutativity does not hold:", commutative_property_results)
 
@@ -89,3 +78,52 @@ z = IntricateInteger(4, 7, 2)
 span = generate_spanning_set([w, x, y, z])
 for i in span:
     print(i)
+
+
+
+
+
+
+
+
+
+
+
+
+def peculiar_commutative_results():
+    peculiar_property_results = []
+    ipeculiar_property_results = []
+    commutative_property_results = []
+    icommutative_property_results = []
+
+    for n in range(1, 51):
+        peculiar_property_results += [(n, a) for a in range(0, n) if has_intricate_peculiar_property(n, a)]
+        ipeculiar_property_results += [(n, a) for a in range(0, n) if iterator_has_intricate_peculiar_property(n, a)]
+        commutative_property_results += [(n, a) for a in range(0, n) if not has_commutative_intricate_multiplication(n, a)]
+        icommutative_property_results += [(n, a) for a in range(0, n) if not iterator_has_commutative_intricate_multiplication(n, a)]
+    return peculiar_property_results, ipeculiar_property_results, commutative_property_results, icommutative_property_results
+
+peculiar_property_results, ipeculiar_property_results, commutative_property_results, icommutative_property_results = peculiar_commutative_results()
+
+""" Parametrized tests to make sure a = n-1 hold for all pairs (n, alpha) where 1 <= n <= 50 and 0 <= alpha < n """
+@pytest.mark.parametrize("results_tuple", peculiar_property_results)
+def test_peculiar_property(results_tuple):
+    n, a = results_tuple
+    assert a == n-1, f"{a} = {n-1}"
+
+
+
+""" Parametrized tests to make sure a = n-1 hold for all pairs (n, alpha) where 1 <= n <= 50 and 0 <= alpha < n """
+@pytest.mark.parametrize("results_tuple", ipeculiar_property_results)
+def test_iterative_peculiar_property(results_tuple):
+    n, a = results_tuple
+    assert a == n-1, f"{a} = {n-1}"
+
+""" tests to check whether commutativity holds for all pairs (n,a), where 1≤n≤50 and 0≤a<n """
+@pytest.fixture
+def commutative_results(request):  
+    return request.param 
+
+@pytest.mark.parametrize("commutative_results", commutative_property_results, indirect=True)
+def test_commutative_property(commutative_results):
+    assert len(commutative_results) == 0
