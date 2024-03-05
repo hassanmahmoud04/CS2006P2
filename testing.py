@@ -26,43 +26,6 @@ def test_intricate_integer():
 
     print("IntricateInteger basic tests passed!")
 
-# Check for all pairs (n, alpha) where 1 <= n <= 50 and 0 <= alpha < n
-peculiar_property_results = []
-commutative_property_results = []
-for n in range(1, 51):
-    for alpha in range(n):
-        peculiar_property = has_intricate_peculiar_property(n, alpha)
-        commutativity = has_commutative_intricate_multiplication(n, alpha)
-        if peculiar_property:
-            peculiar_property_results.append((n, alpha))
-        if not commutativity:
-            commutative_property_results.append((n, alpha))
-
-print("Pairs (n, alpha) where x ⊗ x = x holds:", peculiar_property_results)
-print("Pairs (n, alpha) where commutativity does not hold:", commutative_property_results)
-
-test_intricate_integer()
-
-print("Pairs (n, alpha) where commutativity does not hold:", commutative_property_results)
-
-def test_peculiar_property(peculiarity_results):
-    for n, a in peculiarity_results:
-        if a != n-1:
-            print("Test failed: property does not hold for",(n, a))
-            return
-    print("Test passed! property holds if and only if α = n − 1")
-    
-peculiar_property_results = []
-commutative_property_results = []
-
-for n in range(1, 51):
-    peculiar_property_results += [(n, a) for a in range(0, n) if iterator_has_intricate_peculiar_property(n, a)]
-    commutative_property_results += [(n, a) for a in range(0, n) if iterator_has_commutative_intricate_multiplication(n, a)]
-
-test_peculiar_property(peculiar_property_results)
-
-print("Pairs (n, alpha) where commutativity does not hold:", commutative_property_results)
-
 # Testing new features
 print("Testing associative property and intricate roots of one...")
 for n in range(1, 6): # Example range, adjust as needed
@@ -79,17 +42,23 @@ span = generate_spanning_set([w, x, y, z])
 for i in span:
     print(i)
 
+def valid_associative_pairs():
+    associativity_results = []
+    iassociativity_results = []
+
+    for n in range(1, 21):
+        associativity_results += [(n, a) for a in range(0, n) if has_associative_intricate_multiplication(n, a)]
+        iassociativity_results += [(n, a) for a in range(0, n) if iterator_has_associative_intricate_multiplication(n, a)]
+
+    if ((len(associativity_results) == 210) and (len(iassociativity_results) == 210)):
+        print("associativity holds for all 1≤n≤20 and 0≤a<n.")
+    else:
+        print("Pairs (n, alpha) where associativity holds:", associativity_results)
+
+valid_associative_pairs()
 
 
-
-
-
-
-
-
-
-
-
+""" get results ready to use for unit testing """
 def peculiar_commutative_results():
     peculiar_property_results = []
     ipeculiar_property_results = []
@@ -109,22 +78,24 @@ peculiar_property_results, ipeculiar_property_results, commutative_property_resu
 @pytest.mark.parametrize("results_tuple", peculiar_property_results)
 def test_peculiar_property(results_tuple):
     n, a = results_tuple
-    assert a == n-1, f"{a} = {n-1}"
+    assert a == n-1, f"{a} = {n-1} holds for all pairs (n,a), where 1≤n≤50 and 0≤a<n."
 
 
 """ Parametrized tests to make sure a = n-1 hold for all pairs (n, alpha) where 1 <= n <= 50 and 0 <= alpha < n """
 @pytest.mark.parametrize("results_tuple", ipeculiar_property_results)
 def test_iterative_peculiar_property(results_tuple):
     n, a = results_tuple
-    assert a == n-1, f"{a} = {n-1}"
+    assert a == n-1, f"{a} = {n-1} for for all pairs (n,a), where 1≤n≤50 and 0≤a<n."
 
 """ tests to check whether commutativity holds for all pairs (n,a), where 1≤n≤50 and 0≤a<n """
 def test_commutative_property():
     commutative_results = commutative_property_results
 
-    assert len(commutative_results) == 0, f"test passed"
+    assert not commutative_results, f"commutativity holds for all pairs (n,a), where 1≤n≤50 and 0≤a<n. "
+    
 
 def test_iterative_commutative_property():
     commutative_results = icommutative_property_results
 
-    assert len(commutative_results) == 0
+    assert not commutative_results, f"commutativity holds for all pairs (n,a), where 1≤n≤50 and 0≤a<n. "
+    

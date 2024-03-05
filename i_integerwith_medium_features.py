@@ -30,14 +30,6 @@ def iterator_has_commutative_intricate_multiplication(n, alpha):
                 return False
     return True
 
-associativity_results = []
-for n in range(1, 21):
-    for alpha in range(n):
-        if iterator_has_associative_intricate_multiplication(n, alpha):
-            associativity_results.append((n, alpha))
-
-print("Pairs (n, alpha) where associativity holds:", associativity_results)
-
 # Testing the IntricateIntegers class and iteration
 intricate_set = IntricateIntegers(3, 2)
 print("IntricateIntegers(3, 2):")
