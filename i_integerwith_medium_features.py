@@ -13,12 +13,6 @@ def iterator_has_intricate_peculiar_property(n,alpha):
 
 ##############################################
 def iterator_has_associative_intricate_multiplication(n, alpha):
-    intricate_integers = IntricateIntegers(n, alpha)
-
-    for x in intricate_integers:
-        for y in intricate_integers:
-            for z in intricate_integers:
-def has_associative_intricate_multiplication_iter(n, alpha):
     intricate_integeres = IntricateIntegers(n, alpha)
     for x, elem in enumerate(intricate_integeres, 0):
         for y, elem2 in enumerate(intricate_integeres, 1):
@@ -39,7 +33,7 @@ def iterator_has_commutative_intricate_multiplication(n, alpha):
 associativity_results = []
 for n in range(1, 21):
     for alpha in range(n):
-        if has_associative_intricate_multiplication_iter(n, alpha):
+        if iterator_has_associative_intricate_multiplication(n, alpha):
             associativity_results.append((n, alpha))
 
 print("Pairs (n, alpha) where associativity holds:", associativity_results)
@@ -51,7 +45,7 @@ for x in intricate_set:
     print(x)
 
 def compare_times(n, alpha):
-    iterator_assoc = timeit.timeit(lambda: has_associative_intricate_multiplication_iter(n, alpha), number=10000)
+    iterator_assoc = timeit.timeit(lambda: iterator_has_associative_intricate_multiplication(n, alpha), number=10000)
     loop_assoc = timeit.timeit(lambda: has_associative_intricate_multiplication(n, alpha), number=10000)
     print("Time for 10000 tests for iterator associativity: " + str(iterator_assoc))
     print("Time for 10000 tests for for loop associativity: " + str(loop_assoc))
