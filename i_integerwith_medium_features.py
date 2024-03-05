@@ -13,18 +13,19 @@ def iterator_has_intricate_peculiar_property(n,alpha):
 
 ##############################################
 def has_associative_intricate_multiplication_iter(n, alpha):
-    for x in IntricateIntegers(n,alpha):
-        for y in IntricateIntegers(n,alpha):
-            for z in IntricateIntegers(n,alpha):
-                if not (((x * y) * z).value == (x * (y * z)).value):
+    intricate_integeres = IntricateIntegers(n, alpha)
+    for x, elem in enumerate(intricate_integeres, 0):
+        for y, elem2 in enumerate(intricate_integeres, 1):
+            for z, elem3 in enumerate(intricate_integeres, 2):
+                if not (((elem * elem2) * elem3).value == (elem * (elem2 * elem3)).value):
                     return False
     return True
 
 def iterator_has_commutative_intricate_multiplication(n, alpha):
     intricate_integeres = IntricateIntegers(n, alpha)
 
-    for i, elem in enumerate(intricate_integeres):
-        for j, elem2 in enumerate(intricate_integeres):
+    for i, elem in enumerate(intricate_integeres, 0):
+        for j, elem2 in enumerate(intricate_integeres, 1):
             if not ((elem * elem2).value == (elem2 * elem).value):
                 return False
     return True
