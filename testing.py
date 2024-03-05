@@ -50,6 +50,22 @@ def peculiar_commutative_results():
 
 peculiar_property_results, ipeculiar_property_results, commutative_property_results, icommutative_property_results = peculiar_commutative_results()
 
+# Test for associativity, print values where it holds
+def valid_associative_pairs():
+    associativity_results = []
+    iassociativity_results = []
+
+    for n in range(1, 21):
+        associativity_results += [(n, a) for a in range(0, n) if has_associative_intricate_multiplication(n, a)]
+        iassociativity_results += [(n, a) for a in range(0, n) if iterator_has_associative_intricate_multiplication(n, a)]
+
+    if ((len(associativity_results) == 210) and (len(iassociativity_results) == 210)):
+        print("associativity holds for all 1≤n≤20 and 0≤a<n.")
+    else:
+        print("Pairs (n, alpha) where associativity holds:", associativity_results)
+
+valid_associative_pairs()
+
 # Parametrized tests from the second file for peculiar properties
 @pytest.mark.parametrize("results_tuple", peculiar_property_results)
 def test_peculiar_property(results_tuple):
