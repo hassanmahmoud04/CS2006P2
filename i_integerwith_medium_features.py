@@ -12,6 +12,12 @@ def iterator_has_intricate_peculiar_property(n,alpha):
     return True
 
 ##############################################
+def iterator_has_associative_intricate_multiplication(n, alpha):
+    intricate_integers = IntricateIntegers(n, alpha)
+
+    for x in intricate_integers:
+        for y in intricate_integers:
+            for z in intricate_integers:
 def has_associative_intricate_multiplication_iter(n, alpha):
     intricate_integeres = IntricateIntegers(n, alpha)
     for x, elem in enumerate(intricate_integeres, 0):
