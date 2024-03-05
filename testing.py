@@ -86,6 +86,14 @@ def commutative_results(request):
 def test_commutative_property(commutative_results):
     assert len(commutative_results) == 0
 
+@pytest.fixture
+def commutative_results(request):  
+    return request.param 
+
+@pytest.mark.parametrize("commutative_results", icommutative_property_results, indirect=True)
+def test_commutative_property(commutative_results):
+    assert len(commutative_results) == 0
+
 # Testing new features included in both versions, ensuring no duplication
 print("Testing associative property and intricate roots of one...")
 for n in range(1, 6): # Example range, adjust as needed
