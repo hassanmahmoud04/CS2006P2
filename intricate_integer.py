@@ -6,6 +6,8 @@ class IntricateInteger:
     # Initialize the IntricateInteger object with value, modulus, and alpha parameters.
     def __init__(self, value, modulus, alpha):
         # Validate that the modulus is a positive integer.
+        if not (0 <= value < modulus):
+            raise ValueError("Value must be in the set {0, 1, ..., modulus - 1}")
         if modulus <= 0:
             raise ValueError("Modulus must be a positive integer")
         # Validate that alpha is within the valid range [0, modulus).
