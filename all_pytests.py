@@ -102,11 +102,14 @@ def test_intricate_integer_initialization():
 
     # Testing modulus <= 0
     with pytest.raises(ValueError):
-        IntricateInteger(10, 0, 1)
+        IntricateInteger(0, 0, 0)
     
     # Testing alpha not in [0, modulus)
     with pytest.raises(ValueError):
-        IntricateInteger(10, 7, -1)
+        IntricateInteger(1, 7, 10)
+
+    with pytest.raises(ValueError):
+        IntricateInteger(10,7,3)
 
 def test_intricate_integer_str():
     obj = IntricateInteger(3, 7, 1)
@@ -222,10 +225,10 @@ def test_iterative_peculiar_property(results_tuple):
     n, a = results_tuple  # Unpacking n and alpha from the tuple
     assert a == n-1, f"{a} = {n-1}"  # Asserting that alpha equals n-1 for the peculiar property to hold iteratively
 
-# Pytest fixture for commutative property tests
-@pytest.fixture
-def commutative_results(request):  
-    return request.param  # Returning the parameterized input
+# # Pytest fixture for commutative property tests
+# @pytest.fixture
+# def commutative_results(request):  
+#     return request.param  # Returning the parameterized input
 
 # This is commented out as although this is true - the test is skipped as the input set is empty.
 # # Pytest parametrized test for checking the commutative property

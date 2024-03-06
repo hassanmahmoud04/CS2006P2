@@ -5,14 +5,14 @@ import math
 class IntricateInteger:
     # Initialize the IntricateInteger object with value, modulus, and alpha parameters.
     def __init__(self, value, modulus, alpha):
-        # Validate that the modulus is a positive integer.
-        if not (0 <= value < modulus):
-            raise ValueError("Value must be in the set {0, 1, ..., modulus - 1}")
         if modulus <= 0:
+        # Validate that the modulus is a positive integer.
             raise ValueError("Modulus must be a positive integer")
         # Validate that alpha is within the valid range [0, modulus).
         if not (0 <= alpha < modulus):
             raise ValueError("Alpha must be in the set {0, 1, ..., modulus - 1}")
+        if not (0 <= value < modulus):
+            raise ValueError("Value must be in the set {0, 1, ..., modulus - 1}")
         # Set the value of the IntricateInteger, ensuring it is within the range [0, modulus) using modulus operation.
         self.value = value % modulus
         # Store the modulus and alpha values in the object.
