@@ -1,4 +1,3 @@
-import timeit
 import pytest  # Added for pytest functionalities
 from easy_medium_features import *
 from i_integerwith_medium_features import *
