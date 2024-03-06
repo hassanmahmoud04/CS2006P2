@@ -6,7 +6,7 @@ pip install coverage
 
 # Step 2: Run pytest with coverage on the testing.py file
 echo "Running tests with coverage..."
-coverage run -m pytest testing.py
+coverage run -m pytest all_pytests.py
 
 # Step 3: Generate the coverage report with missing lines
 echo "Generating coverage report..."
