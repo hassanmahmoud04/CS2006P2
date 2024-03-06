@@ -1,0 +1,21 @@
+0000000000000000000000000000000000000000 fec97d613c28facb1fab4520553eae2d5b9835b3 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709555871 +0000	branch: Created from main
+fec97d613c28facb1fab4520553eae2d5b9835b3 237ac00d434437b66884ebabb70be8fb886d864f Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709568703 +0000	commit: sort classes and files
+237ac00d434437b66884ebabb70be8fb886d864f 1f74da6c570d391c014a7e07aa74d84ab6735c0b Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709569310 +0000	commit: remove unnecessary files
+1f74da6c570d391c014a7e07aa74d84ab6735c0b 8e0951b185160af5c47d95cece555a5c45925b43 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709570779 +0000	commit: fix imports
+8e0951b185160af5c47d95cece555a5c45925b43 b671d5f8fc75decc5964fabaab885faad9d38cd1 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709637425 +0000	pull: Fast-forward
+b671d5f8fc75decc5964fabaab885faad9d38cd1 6632c328ab435d245e855f337f18487eb066d0ab Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709647463 +0000	commit: add unit tests for peculiarity
+6632c328ab435d245e855f337f18487eb066d0ab 0f819def938736ef8a785ad64506953f68401f69 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709647859 +0000	commit (merge): Merge branch 'new_branch' of https://github.com/hassanmahmoud04/CS2006P2 into new_branch
+0f819def938736ef8a785ad64506953f68401f69 5919e007420b9cf15e13afd32dec9c47d982ec09 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709649877 +0000	commit: add tests for commutativity
+5919e007420b9cf15e13afd32dec9c47d982ec09 66ca45ab3ebf32f5b6114387658ffa9240f05d47 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709649900 +0000	commit: add tests for commutativity
+66ca45ab3ebf32f5b6114387658ffa9240f05d47 ca89fac13ebcc85f2c3809ef8f7876b610d19c85 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709649917 +0000	commit (merge): Merge branch 'new_branch' of https://github.com/hassanmahmoud04/CS2006P2 into new_branch
+ca89fac13ebcc85f2c3809ef8f7876b610d19c85 3c6345f7382ecc9b0553d450977405281ba2919b Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709654557 +0000	commit: add further testing
+3c6345f7382ecc9b0553d450977405281ba2919b 738509dd9ef933ad05ef77260ee705fca6f06613 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709654903 +0000	commit (merge): Merge branch 'new_branch' of https://github.com/hassanmahmoud04/CS2006P2 into new_branch
+738509dd9ef933ad05ef77260ee705fca6f06613 224f1b4261cc9b3f3eb7527e4f1ba686d4d7e7b8 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709654967 +0000	commit: add associativity testing
+224f1b4261cc9b3f3eb7527e4f1ba686d4d7e7b8 d364b0ac2b992e0901f086d0dc70e801793e304f Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709665514 +0000	commit: add parametrized test for iterative commutative property
+d364b0ac2b992e0901f086d0dc70e801793e304f 7b16233ae47a5bfb2a074f29f5ea4a983f3deffa Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709670940 +0000	pull: Fast-forward
+7b16233ae47a5bfb2a074f29f5ea4a983f3deffa 71b14683cf2b136878863c7f8d1298fd8301f1e5 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709728342 +0000	pull: Fast-forward
+71b14683cf2b136878863c7f8d1298fd8301f1e5 eaba9854557d66a4a910afc7bb39dac6aafbdeb9 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709733027 +0000	commit: remove unneccessary file
+eaba9854557d66a4a910afc7bb39dac6aafbdeb9 b7cf434ae941d08b632cb3fa655a477401abda84 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709735751 +0000	pull: Fast-forward
+b7cf434ae941d08b632cb3fa655a477401abda84 18bafe8a010a70e7a1a98167b7a211fac1e5d50d Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709736835 +0000	commit: add exception for value not in (0 <= alpha < modulus):
+18bafe8a010a70e7a1a98167b7a211fac1e5d50d 7ba64146a9e2d6d0c7fcb10f40f8b9c85ecd055c Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709736909 +0000	commit: add exception for value not in (0 <= alpha < modulus):
+7ba64146a9e2d6d0c7fcb10f40f8b9c85ecd055c 05dde32e9adcab9e77d3cc6790b851b732253182 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709738914 +0000	pull: Fast-forward

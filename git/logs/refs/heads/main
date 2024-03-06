@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 041b4e0226d98a75f083ddd18ceb52222ca63d67 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1708383052 +0000	commit (initial): commit
+041b4e0226d98a75f083ddd18ceb52222ca63d67 041b4e0226d98a75f083ddd18ceb52222ca63d67 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1708383060 +0000	Branch: renamed refs/heads/master to refs/heads/main
+041b4e0226d98a75f083ddd18ceb52222ca63d67 eec0f72671fca8aee19792ed6f4f514ac2e659aa Hassan Mahmoud <hm253@st-andrews.ac.uk> 1708383112 +0000	commit: commit2
+eec0f72671fca8aee19792ed6f4f514ac2e659aa 94cead043bfc984205b9c31535bba34b298f5ff4 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1708445811 +0000	pull: Fast-forward
+94cead043bfc984205b9c31535bba34b298f5ff4 0daf64b131b0c9bf62688e67e27251a15b3f6e9a Hassan Mahmoud <hm253@st-andrews.ac.uk> 1708548487 +0000	commit: add IntricateIntegers class with iteration
+0daf64b131b0c9bf62688e67e27251a15b3f6e9a d268a991f576e872a348f8371aeb87927780f4e6 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1708606981 +0000	commit: add
+d268a991f576e872a348f8371aeb87927780f4e6 457f612fd896c6a7730230b6cd037a1dcc4cf80d Hassan Mahmoud <hm253@st-andrews.ac.uk> 1708607085 +0000	commit: add ability to check commutivity using iteration
+457f612fd896c6a7730230b6cd037a1dcc4cf80d 9daffdc563aae9818bc9dfc696532d6b4aebfe4e Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709470856 +0000	pull: Fast-forward
+9daffdc563aae9818bc9dfc696532d6b4aebfe4e fec97d613c28facb1fab4520553eae2d5b9835b3 Hassan Mahmoud <hm253@st-andrews.ac.uk> 1709555582 +0000	pull: Fast-forward
