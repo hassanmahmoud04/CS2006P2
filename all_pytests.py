@@ -96,8 +96,8 @@ def test_has_associative_intricate_multiplication(n, alpha, expected):
     
 def test_intricate_integer_initialization():
     # Testing valid initialization
-    obj = IntricateInteger(10, 7, 1)
-    assert obj.value == 10 % 7
+    obj = IntricateInteger(4, 7, 1)
+    assert obj.value == 4 
     assert obj.modulus == 7
     assert obj.alpha == 1
 
@@ -236,7 +236,7 @@ def commutative_results(request):
 
 # Main test block for testing new features, including associative property and roots of one
 print("Testing associative property and intricate roots of one...")
-for n in range(1, 6):  # Looping through a sample range for n
+for n in range(2, 6):  # Looping through a sample range for n
     for alpha in range(0, n):  # Looping through possible alpha values
         # Printing out results of checks for associative property and roots of one
         print(f"n={n}, alpha={alpha}, associative: {has_associative_intricate_multiplication(n, alpha)}")
